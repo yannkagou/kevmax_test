@@ -21,7 +21,7 @@ type SidebarSectionProps = {
 
 export function PageHeaderFirstSection() {
     return (
-        <div className="bg-[#F9FBFF] flex justify-between px-2 py-2 items-center flex-shrink-0">
+        <div className=" flex justify-between px-2 py-2 items-center flex-shrink-0">
             <div className="flex justify-between gap-2 items-center flex-shrink-0">
                 <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0.519531H8.03802V32.6716H0V0.519531Z" fill="#D51130"/>
@@ -70,13 +70,13 @@ export function SidebarSection({children, title}: SidebarSectionProps){
 export function SidebarItem({Icon, title, url}: SidebarItemProps){
     return (
         <nav>
-            <NavLink className={`w-full flex items-center rounded-lg p-3 hover:bg-[#D51130] hover:pl-5 ${url==="list" ? 'pl-5 bg-[#D51130] text-white' : ''}`} to={url}>
-                <div className="w-full flex items-center justify-between px-1">
-                    <div className="flex items-center gap-1">
-                        <Icon className="w-5 h-5"/>
-                        <p className={`${url==="list" ? 'text-white' : ''}`}>{title}</p>
+            <NavLink className={`w-full flex items-center rounded-lg p-3 hover:pl-5 ${url==="list" ? 'pl-5 bg-[#D51130] text-white' : ''}`} to={url}>
+                <div className={`w-full flex items-center justify-between px-1 ${url==="list" ? 'bg-[#D51130]' : ''}`}>
+                    <div className="flex items-center gap-1]">
+                        <Icon className={`w-5 h-5 ${url==="list" ? 'bg-[#D51130]' : ''}`}/>
+                        <p className={`${url==="list" ? 'text-white bg-[#D51130]' : ''}`}>{title}</p>
                     </div>
-                    <KeyboardArrowRightOutlinedIcon />
+                    <KeyboardArrowRightOutlinedIcon className={`w-3 h-3 ${url==="list" ? 'bg-[#D51130]' : ''}`}/>
                 </div>
             </NavLink>
         </nav>
@@ -87,8 +87,8 @@ export const Sidebar = () => {
 
   return (
     <>
-        <aside className="bg-[#F9FBFF] w-[305px] absolute top-0 pb-4 flex flex-col gap-2 px-2">
-            <div className='pt-2 px-2 sticky top-0 bg-[#F9FBFF]'>
+        <aside className=" w-[305px] absolute top-0 pb-4 flex flex-col gap-2 px-2">
+            <div className='pt-2 px-2 sticky top-0 '>
                 <PageHeaderFirstSection />
             </div>
             <SidebarSection title=''>
